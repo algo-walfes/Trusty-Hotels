@@ -1,5 +1,6 @@
 # Trusty Hotels
 
+## [The Wireframe](https://wireframe.cc/pro/edit/383691)
 
 ### About this project
 
@@ -26,7 +27,7 @@ Authors name
 ```markdown
 ---
 author: Algo Wolfes Team Member
-    Ahmad Swedani & Emad Alzoubi & Mohammad Al-Nimrawi
+  Ahmad Swedani & Emad Alzoubi & Mohammad Al-Nimrawi
 ---
 ```
 
