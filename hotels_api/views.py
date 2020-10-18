@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework.views import APIView
+# from django_filters.rest_framework import DjangoFilterBackend
+# from django.contrib.auth.models import User
 
 # Create your views here.
 from .models import Room, PostImages
@@ -14,6 +16,7 @@ class allRooms(generics.ListCreateAPIView):
 class roomDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+
 
 class images(generics.ListCreateAPIView):
 # class images(APIView):
