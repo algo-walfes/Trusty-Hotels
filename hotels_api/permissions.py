@@ -5,4 +5,4 @@ class ReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         else:
-            return object.author == request.user
+            return object.auth == request.user
