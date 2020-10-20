@@ -24,7 +24,7 @@ class Room(models.Model):
     image1 = models.URLField(blank=True,null=True)
     image2 = models.URLField(blank=True,null=True)
     image3 = models.URLField(blank=True,null=True)
-    comments = models.IntegerField(primary_key=True)
+    # comments = models.IntegerField(primary_key=True)
     # this function for add slug auto if it is empty 
 
     def save(self, *args, **kwargs):
