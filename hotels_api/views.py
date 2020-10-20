@@ -7,8 +7,8 @@ from rest_framework.response import Response
 # from .permissions import ReadOnly
 
 # Create your views here.
-from .models import Room, Fav
-from .serializer import RoomSerializer, FavSerializer
+from .models import Room, Fav,Comments
+from .serializer import RoomSerializer, FavSerializer,CommentSerializer
 from django.contrib.auth.models import User
 
 
@@ -58,3 +58,10 @@ class Favs(generics.ListCreateAPIView):
     queryset = Fav.objects.all()
     serializer_class = FavSerializer
     # permission_classes = (ReadOnly,)
+
+
+
+
+class Comments(generics.ListCreateAPIView):
+    queryset = Comments.objects.all()
+    serializer_class = CommentSerializer

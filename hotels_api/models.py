@@ -24,8 +24,9 @@ class Room(models.Model):
     image1 = models.URLField(blank=True,null=True)
     image2 = models.URLField(blank=True,null=True)
     image3 = models.URLField(blank=True,null=True)
-
+    # comments = models.IntegerField(primary_key=True)
     # this function for add slug auto if it is empty 
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
@@ -34,6 +35,10 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+class Comments(models.Model):
+    post = models.ForeignKey(Room,related_name='commentModels', on_delete=models.CASCADE)
+    useremail = models.CharField(max_length=64)
+    comment = models.TextField()
 
 class Fav(models.Model):
     user_email = models.CharField(max_length=64)
