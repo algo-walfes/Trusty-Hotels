@@ -7,4 +7,4 @@ release:
         - mkdir -p static
         - python manage.py collectstatic --noinput
 run:
-    web: gunicorn trusty_hotels.wsgi
+    web: gunicorn trusty_hotels.wsgi 
