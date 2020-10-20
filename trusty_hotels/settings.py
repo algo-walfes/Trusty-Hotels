@@ -29,13 +29,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = env.str('SECRET_KEY')
+# SECRET_KEY='j-ue%w*l0nc^xwtn3=p2^$s5vw*&*03t_x3)gkfsp5a#$(=r6v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG')
+# DEBUG = True
 
 ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
-
+# ALLOWED_HOSTS=['localhost','0.0.0.0','127.0.0.1']
 
 # Application definition
 
@@ -89,23 +92,23 @@ WSGI_APPLICATION = 'trusty_hotels.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str('DATABASE_NAME'),
-        'USER': env.str('DATABASE_USER'),
-        'PASSWORD': env.str('DATABASE_PASSWORD'),
-        'HOST': env.str('DATABASE_HOST'),
-        'PORT': env.int('DATABASE_PORT')
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env.str('DATABASE_NAME'),
+#         'USER': env.str('DATABASE_USER'),
+#         'PASSWORD': env.str('DATABASE_PASSWORD'),
+#         'HOST': env.str('DATABASE_HOST'),
+#         'PORT': env.int('DATABASE_PORT')
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -153,16 +156,16 @@ STATICFILES_DIRS = [
 ]
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-    'rest_framework_simplejwt.authentication.JWTAuthentication',
-    'rest_framework.authentication.SessionAuthentication',
-    'rest_framework.authentication.BasicAuthentication',
-]
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ]
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#     'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     'rest_framework.authentication.SessionAuthentication',
+#     'rest_framework.authentication.BasicAuthentication',
+# ]
+# }
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000','https://trusty-hotels.netlify.app','https://trusty-react.vercel.app'

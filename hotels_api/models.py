@@ -34,6 +34,21 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+
+class Fav(models.Model):
+    user_email = models.CharField(max_length=64)
+    name = models.CharField(max_length=64)
+    description = models.TextField(blank=True)
+    capacity = models.IntegerField()
+    size = models.IntegerField()
+    price = models.IntegerField()
+    extras = models.TextField(blank=True)
+    breakfast = models.CharField(max_length=5)
+    pets = models.CharField(max_length=5)
+    images = models.TextField()
+    hotelName = models.CharField(max_length=64)
+    published_at = models.CharField(max_length=64)
+    
 # class PostImages(models.Model):
 #     post = models.ForeignKey(Room, default=None, related_name='tracks', on_delete=models.CASCADE, blank=True,null=True)
 #     images = models.ImageField(upload_to='images/',blank=True,null=True)
