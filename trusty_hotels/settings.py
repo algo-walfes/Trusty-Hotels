@@ -165,5 +165,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+    'http://localhost:3000','https://trusty-hotels.netlify.app','https://trusty-react.vercel.app'
 ]
