@@ -4,18 +4,18 @@ from rest_framework.response import Response
 # from rest_framework.views import APIView
 # from django_filters.rest_framework import DjangoFilterBackend
 # from django.contrib.auth.models import User
-from .permissions import ReadOnly
+# from .permissions import ReadOnly
 
 # Create your views here.
-from .models import Room
-from .serializer import RoomSerializer
+from .models import Room, Fav
+from .serializer import RoomSerializer, FavSerializer
 from django.contrib.auth.models import User
 
 
 class allRooms(generics.ListAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
-    permission_classes = (ReadOnly,)
+    # permission_classes = (ReadOnly,)
 
     # def create(self, request, *args, **kwargs):
     #     room_data = request.data
@@ -54,3 +54,7 @@ class roomDetail(generics.RetrieveUpdateDestroyAPIView):
 
     #     return Response(serializer.data)
         
+class Favs(generics.ListCreateAPIView):
+    queryset = Fav.objects.all()
+    serializer_class = FavSerializer
+    # permission_classes = (ReadOnly,)

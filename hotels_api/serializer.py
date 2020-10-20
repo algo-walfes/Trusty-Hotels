@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Room
+from .models import Room, Fav
 from django.contrib.auth.models import User
 # from django.contrib.auth import authenticate
 
@@ -20,3 +20,8 @@ class RoomSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # depth = 1
         # read_only_fields = ('tracks',)
+
+class FavSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Fav
+        fields = '__all__'

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Room
+from .models import Room, Fav
 # Register your models here.
 # class PostImagesAdmin(admin.StackedInline):
 #     model = PostImages
@@ -17,3 +17,4 @@ from .models import Room
 #     pass
 
 admin.site.register(Room)
+admin.site.register(Fav)
