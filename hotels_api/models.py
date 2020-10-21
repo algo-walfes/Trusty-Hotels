@@ -54,14 +54,14 @@ class Fav(models.Model):
     pets = models.CharField(max_length=5)
     images = models.TextField()
     hotelName = models.CharField(max_length=64)
-    published_at = models.CharField(max_length=64)
-    slug = models.CharField(max_length=64, blank=True)
+    published_at = models.DateTimeField(auto_now_add=True)
+    
     
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super(Room, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if not self.slug:
+    #         self.slug = slugify(self.name)
+    #     super(Room, self).save(*args, **kwargs)
 
 # class PostImages(models.Model):
 #     post = models.ForeignKey(Room, default=None, related_name='tracks', on_delete=models.CASCADE, blank=True,null=True)
