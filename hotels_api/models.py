@@ -55,7 +55,6 @@ class Fav(models.Model):
     images = models.TextField()
     hotelName = models.CharField(max_length=64)
     published_at = models.CharField(max_length=64)
-    slug = models.CharField(max_length=64, blank=True)
     
 
     def save(self, *args, **kwargs):
