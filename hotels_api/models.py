@@ -39,6 +39,7 @@ class Comments(models.Model):
     post = models.ForeignKey(Room,related_name='commentModels', on_delete=models.CASCADE)
     useremail = models.CharField(max_length=64)
     comment = models.TextField()
+    published_at = models.DateTimeField(auto_now_add=True)
 
 class Fav(models.Model):
     user_email = models.CharField(max_length=64)
