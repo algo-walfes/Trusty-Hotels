@@ -21,7 +21,7 @@ class RoomSerializer(serializers.ModelSerializer):
     commentModels = CommentSerializer('commentModels',many = True)
     class Meta:
         model = Room
-        fields = ['hotel_name','name','slug','type','price','size','capacity','pets','breakfast','featured','description','extras','published_at','commentModels']
+        fields = ['hotel_name','name','slug','type','price','size','capacity','pets','breakfast','featured','description','extras','published_at','main_image','image1','image2','image3','commentModels']
         # fields = '__all__'
         # depth = 1
         # read_only_fields = ('tracks',)
