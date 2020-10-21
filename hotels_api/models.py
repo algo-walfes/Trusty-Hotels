@@ -42,6 +42,7 @@ class Comments(models.Model):
 
 class Fav(models.Model):
     user_email = models.CharField(max_length=64)
+    slug = models.CharField(max_length=64,null=True, blank=True)
     name = models.CharField(max_length=64)
     description = models.TextField(blank=True)
     capacity = models.IntegerField()
@@ -54,6 +55,12 @@ class Fav(models.Model):
     hotelName = models.CharField(max_length=64)
     published_at = models.CharField(max_length=64)
     
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(Room, self).save(*args, **kwargs)
+
 # class PostImages(models.Model):
 #     post = models.ForeignKey(Room, default=None, related_name='tracks', on_delete=models.CASCADE, blank=True,null=True)
 #     images = models.ImageField(upload_to='images/',blank=True,null=True)
